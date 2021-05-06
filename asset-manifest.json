@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/greeninvoice/static/css/main.a934bd41.chunk.css",
+    "main.js": "/greeninvoice/static/js/main.2e299b27.chunk.js",
+    "main.js.map": "/greeninvoice/static/js/main.2e299b27.chunk.js.map",
+    "runtime-main.js": "/greeninvoice/static/js/runtime-main.f242534e.js",
+    "runtime-main.js.map": "/greeninvoice/static/js/runtime-main.f242534e.js.map",
+    "static/js/2.d4c22ec7.chunk.js": "/greeninvoice/static/js/2.d4c22ec7.chunk.js",
+    "static/js/2.d4c22ec7.chunk.js.map": "/greeninvoice/static/js/2.d4c22ec7.chunk.js.map",
+    "static/js/3.9d502000.chunk.js": "/greeninvoice/static/js/3.9d502000.chunk.js",
+    "static/js/3.9d502000.chunk.js.map": "/greeninvoice/static/js/3.9d502000.chunk.js.map",
+    "index.html": "/greeninvoice/index.html",
+    "static/css/main.a934bd41.chunk.css.map": "/greeninvoice/static/css/main.a934bd41.chunk.css.map",
+    "static/js/2.d4c22ec7.chunk.js.LICENSE.txt": "/greeninvoice/static/js/2.d4c22ec7.chunk.js.LICENSE.txt",
+    "static/media/google-icon.54f2532a.svg": "/greeninvoice/static/media/google-icon.54f2532a.svg",
+    "static/media/login.07861b61.svg": "/greeninvoice/static/media/login.07861b61.svg",
+    "static/media/logo.b216a372.svg": "/greeninvoice/static/media/logo.b216a372.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f242534e.js",
+    "static/js/2.d4c22ec7.chunk.js",
+    "static/css/main.a934bd41.chunk.css",
+    "static/js/main.2e299b27.chunk.js"
+  ]
+}
