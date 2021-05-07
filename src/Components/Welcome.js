@@ -1,16 +1,18 @@
 import React from 'react';
+import { useAuth } from '../Hooks/useAuth.js';
 
-function Welcome(props) {
+function Welcome() {
+  const auth = useAuth();
   return (
     <section className='welcome'>
       <h1>ברוכים הבאים!</h1>
 
-      <p>{` היי ${props.name} ברוכים הבאים לעסק שלכם: ${props.businessName} `}</p>
+      <p>{` היי ${auth.state.user.name} ברוכים הבאים לעסק שלכם: ${auth.state.user.businesses[0].name} `}</p>
 
       <button
         type='button'
         className='btn-primary form-btn'
-        onClick={props.logout}
+        onClick={auth.logout}
       >
         Log out
       </button>

@@ -1,6 +1,10 @@
 import React from 'react';
+import { useAuth } from '../Hooks/useAuth.js';
 
-function UserInfo({ user }) {
+function UserInfo() {
+  const auth = useAuth();
+  const user = auth.state.user;
+
   return (
     <section className='user-info'>
       <h1>Welcome to user info page</h1>
