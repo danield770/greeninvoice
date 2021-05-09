@@ -7,33 +7,33 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
-import { ProvideAuth } from './Hooks/useAuth.js';
+import { useAuth } from './Hooks/useAuth.js';
 import Login from './Components/Login';
 import UserInfo from './Components/UserInfo';
 import Welcome from './Components/Welcome';
 
 function App() {
+  const auth = useAuth();
+  console.log(auth);
   return (
-    <ProvideAuth>
-      <Router>
-        <Login />
-        <Switch>
-          <Route exact path='/'>
-            {/* {auth.state.isAuthenticated && <Redirect to='/welcome' />} */}
-          </Route>
-          <Route exact path='/welcome'>
-            <>
-              {/* {!auth.state.isAuthenticated && <Redirect to='/' />} */}
-              <Welcome />
-            </>
-          </Route>
-          <Route exact path='/user-info'>
-            {/* {!auth.state.isAuthenticated && <Redirect to='/' />} */}
-            <UserInfo />
-          </Route>
-        </Switch>
-      </Router>
-    </ProvideAuth>
+    <Router>
+      <Login />
+      <Switch>
+        {auth && (
+          <>
+            <Route exact path='/'>
+              {auth.state.isAuthenticated && <Redirect to='/welcome' />}
+            </Route>
+            <Route exact path='/welcome'>
+              {!auth.state.isAuthenticated ? <Redirect to='/' /> : <Welcome />}
+            </Route>
+            <Route exact path='/user-info'>
+              {!auth.state.isAuthenticated ? <Redirect to='/' /> : <UserInfo />}
+            </Route>
+          </>
+        )}
+      </Switch>
+    </Router>
   );
 }
 

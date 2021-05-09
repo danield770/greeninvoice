@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import { Redirect, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../Hooks/useAuth.js';
-
-import UserInfo from './UserInfo';
-import Welcome from './Welcome';
 
 import LoginFail from './LoginFail';
 import ValidationMessage from './ValidationMessage';
@@ -13,7 +10,6 @@ import { ReactComponent as GoogleSvg } from '../assets/google-icon.svg';
 
 function Login() {
   const auth = useAuth();
-  console.log({ auth });
   const ROOT_URL =
     'https://desolate-ridge-21792.herokuapp.com/https://jupiter.d.greeninvoice.co.il/api/v1/account/login';
 
@@ -79,7 +75,7 @@ function Login() {
 
   return (
     <div>
-      {auth.state.isAuthenticated ? (
+      {auth && auth.state.isAuthenticated ? (
         <div className='nav-wpr'>
           <nav>
             <ul>
@@ -162,10 +158,12 @@ function Login() {
               </div>
               <div className='btn-group'>
                 <button
-                  disabled={!validation.isFormValid || auth.state.isLoading}
+                  disabled={
+                    !validation.isFormValid || (auth && auth?.state?.isLoading)
+                  }
                   className='form-btn btn-primary'
                 >
-                  {auth.state.isLoading ? (
+                  {auth && auth.state.isLoading ? (
                     <span className='spinner'></span>
                   ) : (
                     <span>כניסה</span>
